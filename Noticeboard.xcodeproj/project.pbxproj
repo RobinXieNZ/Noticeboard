@@ -17,6 +17,7 @@
 		7B1BBF001CA1F8F8002B29B9 /* SKMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBEFF1CA1F8F8002B29B9 /* SKMeViewController.m */; };
 		7B1BBF031CA1F907002B29B9 /* SKNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBF021CA1F907002B29B9 /* SKNewViewController.m */; };
 		7B1BBF061CA1F935002B29B9 /* SKContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBF051CA1F935002B29B9 /* SKContactsViewController.m */; };
+		7B1BBF091CA1FF8B002B29B9 /* SKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBF081CA1FF8B002B29B9 /* SKTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		7B1BBF021CA1F907002B29B9 /* SKNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNewViewController.m; sourceTree = "<group>"; };
 		7B1BBF041CA1F935002B29B9 /* SKContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKContactsViewController.h; sourceTree = "<group>"; };
 		7B1BBF051CA1F935002B29B9 /* SKContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKContactsViewController.m; sourceTree = "<group>"; };
+		7B1BBF071CA1FF8B002B29B9 /* SKTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTabBar.h; sourceTree = "<group>"; };
+		7B1BBF081CA1FF8B002B29B9 /* SKTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				7B1BBEF81CA1F833002B29B9 /* SKTabBarViewController.h */,
 				7B1BBEF91CA1F833002B29B9 /* SKTabBarViewController.m */,
 				7B1BBEFB1CA1F8EE002B29B9 /* SKHomeViewController.h */,
+				7B1BBF071CA1FF8B002B29B9 /* SKTabBar.h */,
+				7B1BBF081CA1FF8B002B29B9 /* SKTabBar.m */,
 				7B1BBEFC1CA1F8EE002B29B9 /* SKHomeViewController.m */,
 				7B1BBEFE1CA1F8F8002B29B9 /* SKMeViewController.h */,
 				7B1BBEFF1CA1F8F8002B29B9 /* SKMeViewController.m */,
@@ -235,6 +240,7 @@
 				7B1BBED51CA1F7C6002B29B9 /* main.m in Sources */,
 				7B1BBEFD1CA1F8EE002B29B9 /* SKHomeViewController.m in Sources */,
 				7B1BBF031CA1F907002B29B9 /* SKNewViewController.m in Sources */,
+				7B1BBF091CA1FF8B002B29B9 /* SKTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
