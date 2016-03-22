@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		7B1BBED51CA1F7C6002B29B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBED41CA1F7C6002B29B9 /* main.m */; };
 		7B1BBED81CA1F7C6002B29B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBED71CA1F7C6002B29B9 /* AppDelegate.m */; };
-		7B1BBEDB1CA1F7C6002B29B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBEDA1CA1F7C6002B29B9 /* ViewController.m */; };
-		7B1BBEDE1CA1F7C6002B29B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B1BBEDC1CA1F7C6002B29B9 /* Main.storyboard */; };
 		7B1BBEE01CA1F7C6002B29B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B1BBEDF1CA1F7C6002B29B9 /* Assets.xcassets */; };
 		7B1BBEE31CA1F7C6002B29B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B1BBEE11CA1F7C6002B29B9 /* LaunchScreen.storyboard */; };
 		7B1BBEEE1CA1F7C7002B29B9 /* NoticeboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBEED1CA1F7C7002B29B9 /* NoticeboardTests.m */; };
+		7B1BBEFA1CA1F833002B29B9 /* SKTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBEF91CA1F833002B29B9 /* SKTabBarViewController.m */; };
+		7B1BBEFD1CA1F8EE002B29B9 /* SKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBEFC1CA1F8EE002B29B9 /* SKHomeViewController.m */; };
+		7B1BBF001CA1F8F8002B29B9 /* SKMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBEFF1CA1F8F8002B29B9 /* SKMeViewController.m */; };
+		7B1BBF031CA1F907002B29B9 /* SKNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBF021CA1F907002B29B9 /* SKNewViewController.m */; };
+		7B1BBF061CA1F935002B29B9 /* SKContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBF051CA1F935002B29B9 /* SKContactsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,15 +34,22 @@
 		7B1BBED41CA1F7C6002B29B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7B1BBED61CA1F7C6002B29B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7B1BBED71CA1F7C6002B29B9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7B1BBED91CA1F7C6002B29B9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7B1BBEDA1CA1F7C6002B29B9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		7B1BBEDD1CA1F7C6002B29B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B1BBEDF1CA1F7C6002B29B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B1BBEE21CA1F7C6002B29B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B1BBEE41CA1F7C6002B29B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B1BBEE91CA1F7C6002B29B9 /* NoticeboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoticeboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1BBEED1CA1F7C7002B29B9 /* NoticeboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeboardTests.m; sourceTree = "<group>"; };
 		7B1BBEEF1CA1F7C7002B29B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B1BBEF81CA1F833002B29B9 /* SKTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTabBarViewController.h; sourceTree = "<group>"; };
+		7B1BBEF91CA1F833002B29B9 /* SKTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTabBarViewController.m; sourceTree = "<group>"; };
+		7B1BBEFB1CA1F8EE002B29B9 /* SKHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKHomeViewController.h; sourceTree = "<group>"; };
+		7B1BBEFC1CA1F8EE002B29B9 /* SKHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKHomeViewController.m; sourceTree = "<group>"; };
+		7B1BBEFE1CA1F8F8002B29B9 /* SKMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKMeViewController.h; sourceTree = "<group>"; };
+		7B1BBEFF1CA1F8F8002B29B9 /* SKMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKMeViewController.m; sourceTree = "<group>"; };
+		7B1BBF011CA1F907002B29B9 /* SKNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNewViewController.h; sourceTree = "<group>"; };
+		7B1BBF021CA1F907002B29B9 /* SKNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNewViewController.m; sourceTree = "<group>"; };
+		7B1BBF041CA1F935002B29B9 /* SKContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKContactsViewController.h; sourceTree = "<group>"; };
+		7B1BBF051CA1F935002B29B9 /* SKContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKContactsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,13 +93,20 @@
 			children = (
 				7B1BBED61CA1F7C6002B29B9 /* AppDelegate.h */,
 				7B1BBED71CA1F7C6002B29B9 /* AppDelegate.m */,
-				7B1BBED91CA1F7C6002B29B9 /* ViewController.h */,
-				7B1BBEDA1CA1F7C6002B29B9 /* ViewController.m */,
-				7B1BBEDC1CA1F7C6002B29B9 /* Main.storyboard */,
 				7B1BBEDF1CA1F7C6002B29B9 /* Assets.xcassets */,
 				7B1BBEE11CA1F7C6002B29B9 /* LaunchScreen.storyboard */,
 				7B1BBEE41CA1F7C6002B29B9 /* Info.plist */,
 				7B1BBED31CA1F7C6002B29B9 /* Supporting Files */,
+				7B1BBEF81CA1F833002B29B9 /* SKTabBarViewController.h */,
+				7B1BBEF91CA1F833002B29B9 /* SKTabBarViewController.m */,
+				7B1BBEFB1CA1F8EE002B29B9 /* SKHomeViewController.h */,
+				7B1BBEFC1CA1F8EE002B29B9 /* SKHomeViewController.m */,
+				7B1BBEFE1CA1F8F8002B29B9 /* SKMeViewController.h */,
+				7B1BBEFF1CA1F8F8002B29B9 /* SKMeViewController.m */,
+				7B1BBF011CA1F907002B29B9 /* SKNewViewController.h */,
+				7B1BBF021CA1F907002B29B9 /* SKNewViewController.m */,
+				7B1BBF041CA1F935002B29B9 /* SKContactsViewController.h */,
+				7B1BBF051CA1F935002B29B9 /* SKContactsViewController.m */,
 			);
 			path = Noticeboard;
 			sourceTree = "<group>";
@@ -155,6 +172,7 @@
 		7B1BBEC81CA1F7C6002B29B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SK;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "TIME LIMITED";
 				TargetAttributes = {
@@ -193,7 +211,6 @@
 			files = (
 				7B1BBEE31CA1F7C6002B29B9 /* LaunchScreen.storyboard in Resources */,
 				7B1BBEE01CA1F7C6002B29B9 /* Assets.xcassets in Resources */,
-				7B1BBEDE1CA1F7C6002B29B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,9 +228,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B1BBEDB1CA1F7C6002B29B9 /* ViewController.m in Sources */,
 				7B1BBED81CA1F7C6002B29B9 /* AppDelegate.m in Sources */,
+				7B1BBEFA1CA1F833002B29B9 /* SKTabBarViewController.m in Sources */,
+				7B1BBF001CA1F8F8002B29B9 /* SKMeViewController.m in Sources */,
+				7B1BBF061CA1F935002B29B9 /* SKContactsViewController.m in Sources */,
 				7B1BBED51CA1F7C6002B29B9 /* main.m in Sources */,
+				7B1BBEFD1CA1F8EE002B29B9 /* SKHomeViewController.m in Sources */,
+				7B1BBF031CA1F907002B29B9 /* SKNewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,14 +257,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7B1BBEDC1CA1F7C6002B29B9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7B1BBEDD1CA1F7C6002B29B9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7B1BBEE11CA1F7C6002B29B9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -340,6 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Noticeboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nz.co.timetech.Noticeboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,6 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Noticeboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nz.co.timetech.Noticeboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
