@@ -18,6 +18,7 @@
 		7B1BBF031CA1F907002B29B9 /* SKNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBF021CA1F907002B29B9 /* SKNewViewController.m */; };
 		7B1BBF061CA1F935002B29B9 /* SKContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBF051CA1F935002B29B9 /* SKContactsViewController.m */; };
 		7B1BBF091CA1FF8B002B29B9 /* SKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BBF081CA1FF8B002B29B9 /* SKTabBar.m */; };
+		7BA19DFD1CA34EB60014D299 /* UIView+SKExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA19DFC1CA34EB60014D299 /* UIView+SKExtention.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,9 @@
 		7B1BBF051CA1F935002B29B9 /* SKContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKContactsViewController.m; sourceTree = "<group>"; };
 		7B1BBF071CA1FF8B002B29B9 /* SKTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTabBar.h; sourceTree = "<group>"; };
 		7B1BBF081CA1FF8B002B29B9 /* SKTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTabBar.m; sourceTree = "<group>"; };
+		7BA19DFB1CA34EB60014D299 /* UIView+SKExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SKExtention.h"; sourceTree = "<group>"; };
+		7BA19DFC1CA34EB60014D299 /* UIView+SKExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SKExtention.m"; sourceTree = "<group>"; };
+		7BA19DFE1CA351980014D299 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,9 @@
 				7B1BBEFB1CA1F8EE002B29B9 /* SKHomeViewController.h */,
 				7B1BBF071CA1FF8B002B29B9 /* SKTabBar.h */,
 				7B1BBF081CA1FF8B002B29B9 /* SKTabBar.m */,
+				7BA19DFB1CA34EB60014D299 /* UIView+SKExtention.h */,
+				7BA19DFC1CA34EB60014D299 /* UIView+SKExtention.m */,
+				7BA19DFE1CA351980014D299 /* PrefixHeader.pch */,
 				7B1BBEFC1CA1F8EE002B29B9 /* SKHomeViewController.m */,
 				7B1BBEFE1CA1F8F8002B29B9 /* SKMeViewController.h */,
 				7B1BBEFF1CA1F8F8002B29B9 /* SKMeViewController.m */,
@@ -233,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BA19DFD1CA34EB60014D299 /* UIView+SKExtention.m in Sources */,
 				7B1BBED81CA1F7C6002B29B9 /* AppDelegate.m in Sources */,
 				7B1BBEFA1CA1F833002B29B9 /* SKTabBarViewController.m in Sources */,
 				7B1BBF001CA1F8F8002B29B9 /* SKMeViewController.m in Sources */,
@@ -358,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Noticeboard/PrefixHeader.pch";
 				INFOPLIST_FILE = Noticeboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -370,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Noticeboard/PrefixHeader.pch";
 				INFOPLIST_FILE = Noticeboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -421,6 +431,7 @@
 				7B1BBEF41CA1F7C7002B29B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B1BBEF51CA1F7C7002B29B9 /* Build configuration list for PBXNativeTarget "NoticeboardTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +440,7 @@
 				7B1BBEF71CA1F7C7002B29B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

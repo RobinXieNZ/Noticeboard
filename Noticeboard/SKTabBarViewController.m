@@ -11,6 +11,7 @@
 #import "SKNewViewController.h"
 #import "SKMeViewController.h"
 #import "SKContactsViewController.h"
+#import "SKTabBar.h"
 @interface SKTabBarViewController ()
 
 @end
@@ -35,7 +36,7 @@
     UINavigationController *meNav = [[UINavigationController alloc]initWithRootViewController:meVc];
     [self setUpChildVc:meNav title:@"Me" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
-    // set the font and color for tabbar items
+    // Set the font and color for tabbar items and cancle rendering of tabbar items title.
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSAttachmentAttributeName] = [UIFont systemFontOfSize:10.0];
     attrs[NSForegroundColorAttributeName] = [UIColor grayColor];
@@ -47,6 +48,9 @@
     UITabBarItem *item = [UITabBarItem appearance];
     [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
     [item setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
+    
+    // Customize tabBar
+    [self setValue:[[SKTabBar alloc]init] forKey:@"tabBar"];
 }
 
 - (void)setUpChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage{
