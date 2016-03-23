@@ -35,6 +35,18 @@
     UINavigationController *meNav = [[UINavigationController alloc]initWithRootViewController:meVc];
     [self setUpChildVc:meNav title:@"Me" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
+    // set the font and color for tabbar items
+    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
+    attrs[NSAttachmentAttributeName] = [UIFont systemFontOfSize:10.0];
+    attrs[NSForegroundColorAttributeName] = [UIColor grayColor];
+    
+    NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
+    selectedAttrs[NSAttachmentAttributeName] = attrs[NSAttachmentAttributeName];
+    selectedAttrs[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
+    
+    UITabBarItem *item = [UITabBarItem appearance];
+    [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
+    [item setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
 }
 
 - (void)setUpChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage{
