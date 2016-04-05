@@ -21,20 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     SKHomeViewController *homeVc = [[SKHomeViewController alloc]init];
-    UINavigationController *homeNav = [[UINavigationController alloc]initWithRootViewController:homeVc];
-    [self setUpChildVc:homeNav title:@"Home" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
+    // It is not a good idea to create a navigation controller here and add it to tabbar controller. Because you can not set the title for navigation items.
+    [self setUpChildVc:homeVc title:@"Home" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     
     SKNewViewController *newVc = [[SKNewViewController alloc]init];
-    UINavigationController *newNav = [[UINavigationController alloc]initWithRootViewController:newVc];
-    [self setUpChildVc:newNav title:@"New" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
+    [self setUpChildVc:newVc title:@"New" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     
     SKContactsViewController *contactsVc = [[SKContactsViewController alloc]init];
-    UINavigationController *contactsNav = [[UINavigationController alloc]initWithRootViewController:contactsVc];
-    [self setUpChildVc:contactsNav title:@"Contacts" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
+    [self setUpChildVc:contactsVc title:@"Contacts" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     
     SKMeViewController *meVc = [[SKMeViewController alloc]init];
-    UINavigationController *meNav = [[UINavigationController alloc]initWithRootViewController:meVc];
-    [self setUpChildVc:meNav title:@"Me" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
+    [self setUpChildVc:meVc title:@"Me" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
     // Set the font and color for tabbar items and cancle rendering of tabbar items title.
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
@@ -54,11 +51,13 @@
 }
 
 - (void)setUpChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage{
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    vc.navigationItem.title = title;
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:image];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
     vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1];
-    [self addChildViewController:vc];
+    [self addChildViewController:nav];
 }
 
 @end
