@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"friendsRecommentIcon" highLightedImage:@"friendsRecommentIcon-click" target:self action:@selector(friendsClick)];
+}
+
+- (void)friendsClick {
+    NSLog(@"MainTagSubIcon");
 }
 
 - (void)didReceiveMemoryWarning {
