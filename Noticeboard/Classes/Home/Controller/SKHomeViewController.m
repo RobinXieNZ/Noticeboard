@@ -7,7 +7,6 @@
 //
 
 #import "SKHomeViewController.h"
-
 @interface SKHomeViewController ()
 
 @end
@@ -20,7 +19,9 @@
 }
 
 - (void)mainTagClick {
-    NSLog(@"MainTagSubIcon");
+    UIViewController *vc = [[UIViewController alloc]init];
+    [vc.view setBackgroundColor:[UIColor greenColor]];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

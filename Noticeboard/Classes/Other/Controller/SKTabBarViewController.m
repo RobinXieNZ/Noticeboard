@@ -12,6 +12,7 @@
 #import "SKMeViewController.h"
 #import "SKContactsViewController.h"
 #import "SKTabBar.h"
+#import "SKNavigationController.h"
 @interface SKTabBarViewController ()
 
 @end
@@ -51,7 +52,7 @@
 }
 
 - (void)setUpChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage{
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    SKNavigationController *nav = [[SKNavigationController alloc]initWithRootViewController:vc];
     vc.navigationItem.title = title;
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:image];
