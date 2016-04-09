@@ -9,7 +9,18 @@
 #import "SKNavigationController.h"
 
 @implementation SKNavigationController
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+
++ (void)initialize {
+    // Change background for all navagation bars.
+    UINavigationBar *bar = [UINavigationBar appearanceWhenContainedIn:[self class], nil];
+    [bar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)viewDidLoad {
+    
+}
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
         if(self.childViewControllers.count > 0){
         UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 30)];
         [backButton setTitle:@"Back" forState:UIControlStateNormal];
@@ -26,7 +37,7 @@
     }
     [super pushViewController:viewController animated:animated];
 }
-- (void)back{
+- (void)back {
     [self popViewControllerAnimated:YES];
 }
 @end
