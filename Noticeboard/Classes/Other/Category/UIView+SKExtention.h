@@ -19,4 +19,10 @@
 @property (nonatomic, assign) CGFloat y;
 /** size of view */
 @property (nonatomic, assign) CGSize size;
+/** center X of view */
+@property (nonatomic, assign) CGFloat centerX;
+/** center Y of view */
+@property (nonatomic, assign) CGFloat centerY;
+/** center of view */
+@property (nonatomic, assign) CGPoint center;
 @end
