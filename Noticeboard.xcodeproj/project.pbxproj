@@ -21,6 +21,11 @@
 		7B246DC11CB66F84000B3DC8 /* SKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B246DB61CB66F84000B3DC8 /* SKTabBar.m */; };
 		7B246DC51CB66F90000B3DC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B246DC31CB66F90000B3DC8 /* Assets.xcassets */; };
 		7B246DC81CB678FA000B3DC8 /* SKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B246DC71CB678FA000B3DC8 /* SKNavigationController.m */; };
+		7B5104F21CC4CE2B00BB8BCF /* SKNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5104F11CC4CE2B00BB8BCF /* SKNewsViewController.m */; };
+		7B5104F51CC4CE3F00BB8BCF /* SKBuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5104F41CC4CE3F00BB8BCF /* SKBuyViewController.m */; };
+		7B5104F81CC4CE5D00BB8BCF /* SKSellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5104F71CC4CE5D00BB8BCF /* SKSellViewController.m */; };
+		7B5104FB1CC4CE7200BB8BCF /* SKFunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5104FA1CC4CE7200BB8BCF /* SKFunViewController.m */; };
+		7B5104FE1CC4CE8200BB8BCF /* SKDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5104FD1CC4CE8200BB8BCF /* SKDateViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,16 @@
 		7B246DC41CB66F90000B3DC8 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7B246DC61CB678FA000B3DC8 /* SKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKNavigationController.h; path = Noticeboard/Classes/Other/Controller/SKNavigationController.h; sourceTree = SOURCE_ROOT; };
 		7B246DC71CB678FA000B3DC8 /* SKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKNavigationController.m; path = Noticeboard/Classes/Other/Controller/SKNavigationController.m; sourceTree = SOURCE_ROOT; };
+		7B5104F01CC4CE2B00BB8BCF /* SKNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNewsViewController.h; sourceTree = "<group>"; };
+		7B5104F11CC4CE2B00BB8BCF /* SKNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNewsViewController.m; sourceTree = "<group>"; };
+		7B5104F31CC4CE3F00BB8BCF /* SKBuyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKBuyViewController.h; sourceTree = "<group>"; };
+		7B5104F41CC4CE3F00BB8BCF /* SKBuyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKBuyViewController.m; sourceTree = "<group>"; };
+		7B5104F61CC4CE5D00BB8BCF /* SKSellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSellViewController.h; sourceTree = "<group>"; };
+		7B5104F71CC4CE5D00BB8BCF /* SKSellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSellViewController.m; sourceTree = "<group>"; };
+		7B5104F91CC4CE7200BB8BCF /* SKFunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKFunViewController.h; sourceTree = "<group>"; };
+		7B5104FA1CC4CE7200BB8BCF /* SKFunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKFunViewController.m; sourceTree = "<group>"; };
+		7B5104FC1CC4CE8200BB8BCF /* SKDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKDateViewController.h; sourceTree = "<group>"; };
+		7B5104FD1CC4CE8200BB8BCF /* SKDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKDateViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +207,16 @@
 			children = (
 				7B246D9A1CB66F84000B3DC8 /* SKHomeViewController.h */,
 				7B246D9B1CB66F84000B3DC8 /* SKHomeViewController.m */,
+				7B5104FC1CC4CE8200BB8BCF /* SKDateViewController.h */,
+				7B5104FD1CC4CE8200BB8BCF /* SKDateViewController.m */,
+				7B5104F91CC4CE7200BB8BCF /* SKFunViewController.h */,
+				7B5104FA1CC4CE7200BB8BCF /* SKFunViewController.m */,
+				7B5104F61CC4CE5D00BB8BCF /* SKSellViewController.h */,
+				7B5104F71CC4CE5D00BB8BCF /* SKSellViewController.m */,
+				7B5104F01CC4CE2B00BB8BCF /* SKNewsViewController.h */,
+				7B5104F11CC4CE2B00BB8BCF /* SKNewsViewController.m */,
+				7B5104F31CC4CE3F00BB8BCF /* SKBuyViewController.h */,
+				7B5104F41CC4CE3F00BB8BCF /* SKBuyViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -439,12 +464,17 @@
 				7B246DBA1CB66F84000B3DC8 /* SKHomeViewController.m in Sources */,
 				7B246DBD1CB66F84000B3DC8 /* UIBarButtonItem+SKExtention.m in Sources */,
 				7B246DBF1CB66F84000B3DC8 /* SKTabBarViewController.m in Sources */,
+				7B5104F51CC4CE3F00BB8BCF /* SKBuyViewController.m in Sources */,
 				7B246DBE1CB66F84000B3DC8 /* UIView+SKExtention.m in Sources */,
 				7B246DBB1CB66F84000B3DC8 /* SKMeViewController.m in Sources */,
+				7B5104F81CC4CE5D00BB8BCF /* SKSellViewController.m in Sources */,
 				7B246DC01CB66F84000B3DC8 /* main.m in Sources */,
 				7B246DB81CB66F84000B3DC8 /* SKContactsViewController.m in Sources */,
+				7B5104FB1CC4CE7200BB8BCF /* SKFunViewController.m in Sources */,
+				7B5104FE1CC4CE8200BB8BCF /* SKDateViewController.m in Sources */,
 				7B246DC81CB678FA000B3DC8 /* SKNavigationController.m in Sources */,
 				7B246DC11CB66F84000B3DC8 /* SKTabBar.m in Sources */,
+				7B5104F21CC4CE2B00BB8BCF /* SKNewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

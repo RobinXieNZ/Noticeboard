@@ -7,6 +7,12 @@
 //
 
 #import "SKHomeViewController.h"
+#import "SKNewsViewController.h"
+#import "SKSellViewController.h"
+#import "SKBuyViewController.h"
+#import "SKFunViewController.h"
+#import "SKDateViewController.h"
+
 @interface SKHomeViewController ()
 
 /** indicator of titles view */
@@ -20,8 +26,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpChildViews];
     [self setUpNavigationBar];
     [self setUpTitlesView];
+    [self setUpContentView];
 }
 
 - (void)setUpNavigationBar {
@@ -67,7 +75,7 @@
             self.selectedButton = button;
             button.enabled = NO;
             [button.titleLabel sizeToFit];
-            // set size of view first then set the position of view
+            // Must set size of view first, then set the position of view
             self.indicatorView.width = button.titleLabel.width;
             self.indicatorView.centerX = button.centerX;
         }
@@ -83,6 +91,30 @@
             self.indicatorView.width = button.titleLabel.width;
             self.indicatorView.centerX = button.centerX;
         }];
+}
+
+- (void)setUpChildViews {
+    UIViewController *newsVc = [[SKNewsViewController alloc]init];
+    [self addChildViewController:newsVc];
+    
+    UIViewController *sellVc = [[SKSellViewController alloc]init];
+    [self addChildViewController:sellVc];
+    
+    UIViewController *buyVc = [[SKBuyViewController alloc]init];
+    [self addChildViewController:buyVc];
+    
+    UIViewController *funVc = [[SKFunViewController alloc]init];
+    [self addChildViewController:funVc];
+    
+    UIViewController *dateVc = [[SKDateViewController alloc]init];
+    [self addChildViewController:dateVc];
+}
+
+- (void)setUpContentView {
+    
+    UIScrollView *contentView = [[UIScrollView alloc]init];
+    contentView.frame = self.view.bounds;
+    
 }
 
 - (void)mainTagClick {
