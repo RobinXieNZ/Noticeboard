@@ -13,12 +13,14 @@
 #import "SKFunViewController.h"
 #import "SKDateViewController.h"
 
-@interface SKHomeViewController ()
+@interface SKHomeViewController ()<UIScrollViewDelegate>
 
 /** indicator of titles view */
 @property (nonatomic, weak) UIView *indicatorView;
 /** selected button of titles view */
 @property (weak, nonatomic) UIButton *selectedButton;
+/** content view */
+@property (nonatomic, weak) UIScrollView *contentView;
 
 @end
 
@@ -60,6 +62,7 @@
     
     for (NSInteger i = 0; i < titles.count; i++) {
         UIButton *button = [[UIButton alloc]init];
+        button.tag = i;
         button.width = width;
         button.hight = hight;
         button.x = width * i;
@@ -86,11 +89,19 @@
     self.selectedButton.enabled = YES;
     button.enabled = NO;
     self.selectedButton = button;
-        [UIView animateWithDuration:0.25 animations:^{
-            // set size of view first then set the position of view
-            self.indicatorView.width = button.titleLabel.width;
-            self.indicatorView.centerX = button.centerX;
-        }];
+    
+    // set animations for button click
+    [UIView animateWithDuration:0.25 animations:^{
+        // set size of view first then set the position of view
+        self.indicatorView.width = button.titleLabel.width;
+        self.indicatorView.centerX = button.centerX;
+    }];
+    
+    // scall the content view
+    CGPoint offSet = self.contentView.contentOffset;
+    offSet.x = button.tag * self.contentView.width;
+    NSLog(@"%zd ----- %zd",button.tag,offSet.x);
+    [self.contentView setContentOffset:offSet animated:YES];
 }
 
 - (void)setUpChildViews {
@@ -111,10 +122,16 @@
 }
 
 - (void)setUpContentView {
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     UIScrollView *contentView = [[UIScrollView alloc]init];
     contentView.frame = self.view.bounds;
     
+    // add content view at bottom
+    [self.view insertSubview:contentView atIndex:0];
+    // set content width
+    contentView.contentSize = CGSizeMake(contentView.size.width * self.childViewControllers.count, 0);
+    self.contentView = contentView;
 }
 
 - (void)mainTagClick {
@@ -123,10 +140,14 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    // add sub view to content view
+    
+    // get current index
+    NSInteger index = scrollView.contentOffset.x / scrollView.width;
+    UIViewController *vc = self.childViewControllers[index];
+    vc.view.x = scrollView.contentOffset.x;
+    [self.contentView addSubview:vc.view];
 }
-
 
 @end

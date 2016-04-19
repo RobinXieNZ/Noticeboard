@@ -57,7 +57,7 @@
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:image];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
-    vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1];
+    vc.view.backgroundColor = [UIColor colorWithRed:125/255.0 green:125/255.0 blue:125/255.0  alpha:1];
     [self addChildViewController:nav];
 }
 
