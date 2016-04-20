@@ -10,11 +10,11 @@
 
 @implementation UIView (SKExtention)
 /**
- *  Set hight
+ *  Set height
  */
-- (void)setHight:(CGFloat)hight{
+- (void)setHeight:(CGFloat)height{
     CGRect fream = self.frame;
-    fream.size.height = hight;
+    fream.size.height = height;
     self.frame = fream;
 }
 /**
@@ -66,9 +66,9 @@
     self.center = center;
 }
 /**
- *  Get hight
+ *  Get height
  */
-- (CGFloat)hight{
+- (CGFloat)height{
     return  self.frame.size.height;
 }
 /**

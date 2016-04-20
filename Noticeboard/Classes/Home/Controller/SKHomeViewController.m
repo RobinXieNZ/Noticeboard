@@ -17,6 +17,8 @@
 
 /** indicator of titles view */
 @property (nonatomic, weak) UIView *indicatorView;
+/** title view which contents all titles */
+@property (nonatomic, strong) UIView *titleView;
 /** selected button of titles view */
 @property (weak, nonatomic) UIButton *selectedButton;
 /** content view */
@@ -28,9 +30,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUpChildViews];
     [self setUpNavigationBar];
-    [self setUpTitlesView];
+    [self setUpTitleView];
+    [self setUpChildViews];
     [self setUpContentView];
 }
 
@@ -38,33 +40,28 @@
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"MainTagSubIcon" highLightedImage:@"MainTagSubIconClick" target:self action:@selector(mainTagClick)];
 }
 
-- (void)setUpTitlesView{
+- (void)setUpTitleView{
     // init titles bar
     UIView *titleView = [[UIView alloc]init];
     titleView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.7];
     titleView.width = self.view.width;
-    titleView.hight = 35;
+    titleView.height = 35;
     titleView.y = 64;
     [self.view addSubview:titleView];
+    self.titleView = titleView;
     
-    // init indicator view
-    UIView *indicatorView = [[UIView alloc]init];
-    indicatorView.backgroundColor = [UIColor redColor];
-    indicatorView.hight = 2;
-    indicatorView.y = titleView.hight - indicatorView.hight;
-    self.indicatorView = indicatorView;
-    [titleView addSubview:indicatorView];
+  
     
     // add titles into titles bar
     NSArray *titles = @[@"News",@"Sell",@"Buy",@"Fun",@"Date"];
     CGFloat width = titleView.width / titles.count;
-    CGFloat hight = titleView.hight;
+    CGFloat hight = titleView.height;
     
     for (NSInteger i = 0; i < titles.count; i++) {
         UIButton *button = [[UIButton alloc]init];
         button.tag = i;
         button.width = width;
-        button.hight = hight;
+        button.height = hight;
         button.x = width * i;
         [button setTitle:titles[i] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
@@ -83,6 +80,14 @@
             self.indicatorView.centerX = button.centerX;
         }
     }
+    // Add indicator view aftet the addition of title buttons to make sure the index of childviews equals the order of title buttons
+    // init indicator view
+    UIView *indicatorView = [[UIView alloc]init];
+    indicatorView.backgroundColor = [UIColor redColor];
+    indicatorView.height = 2;
+    indicatorView.y = titleView.height - indicatorView.height;
+    self.indicatorView = indicatorView;
+    [titleView addSubview:indicatorView];
 }
 
 - (void)titleClick:(UIButton *)button{
@@ -100,24 +105,26 @@
     // scall the content view
     CGPoint offSet = self.contentView.contentOffset;
     offSet.x = button.tag * self.contentView.width;
-    NSLog(@"%zd ----- %zd",button.tag,offSet.x);
+//    NSLog(@"%zd ----- %f",button.tag,offSet.x);
     [self.contentView setContentOffset:offSet animated:YES];
 }
 
 - (void)setUpChildViews {
-    UIViewController *newsVc = [[SKNewsViewController alloc]init];
+// It is not a good idea to set content inset of tableviews here, because after the viewdidload method tabbar will initialize.So a batter way is to set content inset in the scrollViewDidEndScrollingAnimation method, or in the viewdidload method of each child view controller.
+
+    UITableViewController *newsVc = [[SKNewsViewController alloc]init];
     [self addChildViewController:newsVc];
     
-    UIViewController *sellVc = [[SKSellViewController alloc]init];
+    UITableViewController *sellVc = [[SKSellViewController alloc]init];
     [self addChildViewController:sellVc];
     
-    UIViewController *buyVc = [[SKBuyViewController alloc]init];
+    UITableViewController *buyVc = [[SKBuyViewController alloc]init];
     [self addChildViewController:buyVc];
     
-    UIViewController *funVc = [[SKFunViewController alloc]init];
+    UITableViewController *funVc = [[SKFunViewController alloc]init];
     [self addChildViewController:funVc];
     
-    UIViewController *dateVc = [[SKDateViewController alloc]init];
+    UITableViewController *dateVc = [[SKDateViewController alloc]init];
     [self addChildViewController:dateVc];
 }
 
@@ -126,12 +133,16 @@
     
     UIScrollView *contentView = [[UIScrollView alloc]init];
     contentView.frame = self.view.bounds;
+    contentView.delegate = self;
+    contentView.pagingEnabled = YES;
     
     // add content view at bottom
     [self.view insertSubview:contentView atIndex:0];
+    
     // set content width
     contentView.contentSize = CGSizeMake(contentView.size.width * self.childViewControllers.count, 0);
     self.contentView = contentView;
+    [self scrollViewDidEndScrollingAnimation:contentView];
 }
 
 - (void)mainTagClick {
@@ -140,13 +151,37 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    // add sub view to content view
+/**
+ *  Delegate method of scrollview
+ *
+ *  To synchronise the scroll view and the title view
+ */
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
+    [self scrollViewDidEndScrollingAnimation:scrollView];
+    
+    NSInteger index = scrollView.contentOffset.x / scrollView.width;
+    [self titleClick:self.titleView.subviews[index]];
+}
+
+/**
+ *  Delegate method of scrollview
+ *  
+ *  Add subview to content view.
+ */
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     // get current index
     NSInteger index = scrollView.contentOffset.x / scrollView.width;
-    UIViewController *vc = self.childViewControllers[index];
+    
+    UITableViewController *vc = self.childViewControllers[index];
+    // you need set y and height for the view, otherwise they will be set as defult which is y = 20, and hight = (height of window - 20).
     vc.view.x = scrollView.contentOffset.x;
+    vc.view.y = 0;
+    vc.view.height = scrollView.height;
+    
+    CGFloat bottom = self.tabBarController.tabBar.height;
+    CGFloat top = CGRectGetMaxY(self.titleView.frame);
+    vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
     [self.contentView addSubview:vc.view];
 }
 

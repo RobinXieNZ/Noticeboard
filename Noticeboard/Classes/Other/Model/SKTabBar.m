@@ -27,7 +27,7 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    CGFloat hight = self.frame.size.height;
+    CGFloat height = self.frame.size.height;
     CGFloat width = self.frame.size.width/5;
     CGFloat y = 0;
     // set up the fream for publish button
@@ -39,7 +39,7 @@
         if(![button isKindOfClass:NSClassFromString(@"UITabBarButton")]) continue;
         button.y = y;
         button.width = width;
-        button.hight = hight;
+        button.height = height;
         button.x = width*((index <= 1)?(index):(index + 1));
         index ++;
     }

@@ -10,7 +10,7 @@
 
 @interface UIView (SKExtention)
 /** Hight of view */
-@property (nonatomic, assign) CGFloat hight;
+@property (nonatomic, assign) CGFloat height;
 /** Width of view */
 @property (nonatomic, assign) CGFloat width;
 /** x of view */
