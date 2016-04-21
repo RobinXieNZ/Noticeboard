@@ -110,7 +110,7 @@
 }
 
 - (void)setUpChildViews {
-// It is not a good idea to set content inset of tableviews here, because after the viewdidload method tabbar will initialize.So a batter way is to set content inset in the scrollViewDidEndScrollingAnimation method, or in the viewdidload method of each child view controller.
+// It is not a good idea to set content inset of tableviews here, because until after the viewdidload method tabbar at bottom will be initialized. So a batter way is to set content inset in the scrollViewDidEndScrollingAnimation method, or in the viewdidload method of each child view controller.
 
     UITableViewController *newsVc = [[SKNewsViewController alloc]init];
     [self addChildViewController:newsVc];
@@ -178,8 +178,9 @@
     vc.view.x = scrollView.contentOffset.x;
     vc.view.y = 0;
     vc.view.height = scrollView.height;
-    
-    CGFloat bottom = self.tabBarController.tabBar.height;
+//    NSLog(@"%@",self.tabBarController.tabBar);
+    CGFloat bottom = 49.0;//self.tabBarController.tabBar.height;
+//    NSLog(@"%f",bottom);
     CGFloat top = CGRectGetMaxY(self.titleView.frame);
     vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
     [self.contentView addSubview:vc.view];
